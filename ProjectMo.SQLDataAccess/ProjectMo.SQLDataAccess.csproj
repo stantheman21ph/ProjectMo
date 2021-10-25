@@ -71,7 +71,8 @@
     <Compile Include="Balance.cs">
       <DependentUpon>ProjectMoSQLEntity.tt</DependentUpon>
     </Compile>
-    <Compile Include="AccountRoutines.cs" />
+    <Compile Include="AccountProcess.cs" />
+    <Compile Include="Interfaces\IAccountProcess.cs" />
     <Compile Include="Payment.cs">
       <DependentUpon>ProjectMoSQLEntity.tt</DependentUpon>
     </Compile>
@@ -138,6 +139,12 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ProjectMo.DataModels\ProjectMo.DataModels.csproj">
+      <Project>{6638c29a-2437-402f-86a4-89f60b02dae6}</Project>
+      <Name>ProjectMo.DataModels</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

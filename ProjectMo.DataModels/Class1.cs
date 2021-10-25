@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ProjectMo.SQLDataAccess
+namespace ProjectMo.DataModels
 {
-    public class AccountRoutines
+    public class Class1
     {
     }
 }

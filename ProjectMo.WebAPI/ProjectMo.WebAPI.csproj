@@ -184,9 +184,9 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
+    <Compile Include="Controllers\CorsHandleAttribute.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="DTOs\AccountDetails.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -276,6 +276,20 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.4.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ProjectMo.BusinessServices\ProjectMo.BusinessServices.csproj">
+      <Project>{ba72caa7-f7ce-429a-a3ce-227c6b624daf}</Project>
+      <Name>ProjectMo.BusinessServices</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ProjectMo.DataModels\ProjectMo.DataModels.csproj">
+      <Project>{6638c29a-2437-402f-86a4-89f60b02dae6}</Project>
+      <Name>ProjectMo.DataModels</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ProjectMo.SQLDataAccess\ProjectMo.SQLDataAccess.csproj">
+      <Project>{2d892e7f-3cf7-40d5-b89c-ce3f1134a6b2}</Project>
+      <Name>ProjectMo.SQLDataAccess</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

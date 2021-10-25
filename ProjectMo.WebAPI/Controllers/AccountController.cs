@@ -1,23 +1,29 @@
-﻿using System;
+﻿using ProjectMo.BusinessServices.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
-using System.Web.Http;
-using System.Web.Http.Results;
+//using System.Web.Http;
+//using System.Web.Http.Results;
 using System.Web.Mvc;
 
 namespace ProjectMo.WebAPI.Controllers
 {
-    public class AccountController : ApiController
+    public class AccountController : Controller
     {
         //// GET api/values
         //public IEnumerable<string> Get()
         //{
         //    return new string[] { "value1", "value2" };
         //}
+        private IAccountService accountService;
+        public AccountController(IAccountService accountService)
+        {
+            this.accountService = accountService;
+        }
 
-        [System.Web.Http.HttpPost]
+        [HttpPost, CorsHandleAttribute]
         public ActionResult GetAccountBalance(string UserName)
         {
             try
@@ -25,7 +31,7 @@ namespace ProjectMo.WebAPI.Controllers
                 var temp =
                 new JsonResult()
                 {
-                    Data = "",
+                    Data = accountService.GetAccountBalance(UserName),
                     MaxJsonLength = 8675390,
                     ContentType = "GetAccountBalance",
                     JsonRequestBehavior = JsonRequestBehavior.AllowGet
@@ -44,7 +50,7 @@ namespace ProjectMo.WebAPI.Controllers
             }
         }
 
-        [System.Web.Http.HttpPost]
+        [HttpPost, CorsHandleAttribute]
         public ActionResult GetAccountBalance(string UserName, string PaymentDate)
         {
             try
@@ -52,7 +58,7 @@ namespace ProjectMo.WebAPI.Controllers
                 var temp =
                 new JsonResult()
                 {
-                    Data = "",
+                    Data = accountService.GetAccountBalance(UserName,PaymentDate),
                     MaxJsonLength = 8675390,
                     ContentType = "GetAccountBalance",
                     JsonRequestBehavior = JsonRequestBehavior.AllowGet
